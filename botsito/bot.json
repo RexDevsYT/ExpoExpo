@@ -1,0 +1,44 @@
+[
+    {
+      "response_type": "greeting",
+      "user_input": ["hola", "saludos", "buenas", "oi"],
+      "bot_response": "¡Hola! ¿Cómo puedo ayudarte?",
+      "required_words": []
+    },
+    {
+      "response_type": "farewell",
+      "user_input": ["adiós", "hasta luego", "nos vemos", "chao"],
+      "bot_response": "¡Hasta pronto!",
+      "required_words": []
+    },
+    {
+      "response_type": "search_skill",
+      "user_input": ["buscar", "encontrar", "localizar", "hallar", "habilidades"],
+      "bot_response": "Para buscar habilidades, dirígete al apartado de 'Explorar'. Allí encontrarás distintas habilidades publicadas.",
+      "required_words": ["buscar", "habilidades"]
+    },
+    {
+      "response_type": "learn",
+      "user_input": ["aprender", "estudiar", "conocer más", "saber sobre"],
+      "bot_response": "Si deseas aprender algo nuevo, te recomiendo visitar el apartado de 'Explorar'. Allí podrás encontrar diversas habilidades y temas.",
+      "required_words": ["aprender"]
+    },
+    {
+      "response_type": "report",
+      "user_input": ["reportar", "denunciar", "problema", "issue"],
+      "bot_response": "Si encuentras algo inapropiado o incorrecto, puedes reportarlo usando el botón de 'Reportar' que aparece en las publicaciones.",
+      "required_words": ["reportar"]
+    },
+    {
+      "response_type": "about",
+      "user_input": ["sobre", "acerca", "información", "vos", "tú"],
+      "bot_response": "Puedes leer más sobre nosotros y cómo funciona esta página en el apartado 'Acerca de nosotros'.",
+      "required_words": ["sobre", "acerca"]
+    },
+    {
+      "response_type": "delete_post",
+      "user_input": ["borrar", "eliminar", "quitar", "publicación", "post"],
+      "bot_response": "Puedes borrar las publicaciones que hayas realizado desde el apartado de tu perfil.",
+      "required_words": ["borrar", "publicación"]
+    }
+]

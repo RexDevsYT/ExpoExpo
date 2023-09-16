@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoEFrt" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="LCSS2">
+    <link rel="stylesheet" href="BootstrapCSS2">
+    <script src="BootstrapJS"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="persona.js"></script>
+    <title></title>
+</head>
+
+
+<div class="contenedor">
+  
+  <div class="half-left">
+    
+    <img class="Fondo" src="/logoxd">
+
+  </img>
+  </div>
+  <div class="half-right">
+      <div class="container">
+        <div class="wizard my-5">
+          <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item flex-fill" role="presentation" data-bs-toggle="tooltip" data-bs-placement="top" title="Step 1">
+              <a class="nav-link active rounded-circle mx-auto d-flex align-items-center justify-content-center" href="#step1" id="step1-tab" data-bs-toggle="tab" role="tab" aria-controls="step1" aria-selected="true">
+                <i class="fa-solid fa-address-book"></i>
+              </a>
+            </li>
+            <li class="nav-item flex-fill" role="presentation" data-bs-toggle="tooltip" data-bs-placement="top" title="Step 2">
+              <a class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center" href="#step2" id="step2-tab" data-bs-toggle="tab" role="tab" aria-controls="step2" aria-selected="false" title="Step 2">
+                <i class="fa-solid fa-image"></i>
+              </a>
+            </li>
+            <li class="nav-item flex-fill" role="presentation" data-bs-toggle="tooltip" data-bs-placement="top" title="Step 3">
+              <a class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center" href="#step3" id="step3-tab" data-bs-toggle="tab" role="tab" aria-controls="step3" aria-selected="false" title="Step 3">
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </li>
+            <li class="nav-item flex-fill" role="presentation" data-bs-toggle="tooltip" data-bs-placement="top" title="Step 4">
+              <a class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center" href="#step4" id="step4-tab" data-bs-toggle="tab" role="tab" aria-controls="step4" aria-selected="false" title="Step 4">
+                <i class="fas fa-flag-checkered"></i>
+                
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" role="tabpanel" id="step1" aria-labelledby="step1-tab">
+              <h3>Paso 1</h3>
+              <p>¡Introduce tu informacion personal!</p>
+              <input type="text" id="NOMBRE" placeholder="Nombre" />
+              <input type="text" id="APELLIDO" placeholder="Apellido" />
+              <input type="date" id="FECHAN" placeholder="Fecha de nacimiento" />
+             
+             
+              <div class="text-center">
+              <a id="Botton-Ir-Login" href="/Login"> <i class="fa-solid fa-left-long"></i> <i class="fa-solid fa-user"></i> </a>
+              </div>
+              <div class="d-flex justify-content-end">
+                <a class="btn btn-info next">Continuar <i class="fas fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="step2" aria-labelledby="step2-tab">
+              <h3>Paso 2</h3>
+            
+              <p>¡Selecciona la imagen de perfil!</p>
+            <div class="file-select" id="src-file1" >
+              <input type="file" id="FOTO" name="src-file1" aria-label="Foto de perfil" style="border-radius: 10px;">
+            </div>
+            <p>Selecciona el genero con el que te identificas</p>
+            <P><i class="fa-solid fa-user" id="xd"></i> Genero
+              <select id="GENERO">
+                <option value="Otro">No definido</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Femenino">Otro</option>
+            </select> </P> 
+            <p>Indicanos de que manera te registras</p>
+          </P><i class="fa-solid fa-user" id="xd"></i> ¿Eres?  <select id="TIPOUSUARIO">
+            <option value="Estudiante">Estudiante</option>
+            <option value="Entusiasta">Entusiasta</option>
+            <option value="UsuarioCasual">Usuario casual</option>
+          </select></P> 
+          
+            <br>
+              <div class="d-flex justify-content-between">
+                <a class="btn btn-secondary previous"><i class="fas fa-angle-left"></i> Volver</a>
+                <a class="btn btn-info next">Continuar <i class="fas fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="step3" aria-labelledby="step3-tab">
+              
+              <h3>Paso 3</h3>
+              <p>¡Introduce el correo electronico y la contraseña para tu cuenta!</p>
+              <input type="text" id="EMAIL" placeholder="Email" />
+              <input  id="PASSWORD" type="Password" placeholder="Contraseña" />
+              <div class="d-flex justify-content-between">
+                <a class="btn btn-secondary previous"><i class="fas fa-angle-left"></i> Volver</a>
+                <a class="btn btn-info next">Continuar <i class="fas fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="step4" aria-labelledby="step4-tab">
+              <h3>¡Ya casi lo tienes!</h3>
+              <p>Presiona el boton para terminar de crear tu cuenta.</p>
+              <input class="boton" type="button" value="Terminar" onclick="BotonGuardar()" />
+              <div class="d-flex justify-content-between">
+                <a class="btn btn-secondary previous"><i class="fas fa-angle-left"></i> Volver</a>
+                <div class="text-center">
+                  <a id="Botton-Ir-Login2" href="/Login"> <i class="fa-solid fa-left-long"></i> <i class="fa-solid fa-user"></i> </a>
+                  </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+</div>
+
+
+
+
+<style>
+#xd{
+  color:#ce1d61;
+}
+#GENERO{
+  height: 35px;
+  width: 92px;
+  color: white;
+    background-color: #ce1d61;
+    border-color: #ce1d61;
+    border-radius: 5px;
+}
+#TIPOUSUARIO{
+  height: 35px;
+  width: 92px;
+  color: white;
+    background-color: #ce1d61;
+    border-color: #ce1d61;
+    border-radius: 5px;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type:"text-javascript">
+
+$('.button').click(function() {
+  var $btn = $(this),
+      $step = $btn.parents('.modal-body'),
+      stepIndex = $step.index(),
+      $pag = $('.modal-header span').eq(stepIndex);
+
+  if (stepIndex === 0 || stepIndex === 1) {
+    step1($step, $pag);
+  } else {
+    step3($step, $pag);
+  }
+});
+function step1($step, $pag) {
+  console.log('step1');
+  // animate the step out
+  $step.addClass('animate-out');
+
+  // animate the step in
+  setTimeout(function() {
+    $step.removeClass('animate-out is-showing')
+         .next().addClass('animate-in');
+    $pag.removeClass('is-active')
+        .next().addClass('is-active');
+  }, 600);
+
+  // after the animation, adjust the classes
+  setTimeout(function() {
+    $step.next().removeClass('animate-in')
+         .addClass('is-showing');
+
+  }, 1200);
+
+  // Show the back button after moving to the next step
+  $('.back-button').css('display', 'inline-block');
+}
+$('.back-button').click(function() {
+  // Find the current step
+  const $currentStep = $(this).closest('.modal-body');
+
+  // Find the previous step
+  const $prevStep = $currentStep.prev();
+
+  // Animate the current step out
+  $currentStep.addClass('animate-out');
+
+  // Animate the previous step in
+  setTimeout(function() {
+    $currentStep.removeClass('animate-out is-showing');
+    $prevStep.addClass('animate-in');
+  }, 600);
+
+  // After the animation, adjust the classes
+  setTimeout(function() {
+    $prevStep.removeClass('animate-in').addClass('is-showing');
+  }, 1200);
+
+  // Hide the back button if we're at the first step
+  if ($prevStep.hasClass('modal-body-step-1')) {
+    $('.back-button').hide();
+  }
+});
+function step3($step, $pag) {
+  console.log('3');
+
+  // animate the step out
+  $step.parents('.modal-wrap').addClass('animate-up');
+
+  setTimeout(function() {
+    $('.rerun-button').css('display', 'inline-block');
+  }, 300);
+}
+
+$('.rerun-button').click(function() {
+  $('.modal-wrap').removeClass('animate-up')
+                  .find('.modal-body')
+                  .first().addClass('is-showing')
+                  .siblings().removeClass('is-showing');
+
+  $('.modal-header span').first().addClass('is-active')
+                          .siblings().removeClass('is-active');
+  $(this).hide();
+});
+let imagenbase64 = "";
+    $("#FOTO").change(function() {
+        readURL(this);
+    });
+    function readURL(input){
+        if (input.files && input.files[0]){
+            let reader = new FileReader();
+
+            reader.onload = function(e){
+                imagenbase64=e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+
+        }
+    }
+
+function BotonGuardar() { //funcion del boton de guardar, sube los datos a la tabla
+let P_instanciada = new personaP(0,
+document.getElementById("NOMBRE").value,
+document.getElementById("APELLIDO").value,
+document.getElementById("EMAIL").value,
+document.getElementById("GENERO").value,
+document.getElementById("FECHAN").value,
+document.getElementById("TIPOUSUARIO").value,
+document.getElementById("PASSWORD").value,
+imagenbase64
+);
+
+console.log(P_instanciada);
+
+
+    P_instanciada.Guardar().then(function(response) {
+        console.log("Success!", response);
+
+swal({
+                      icon: 'success',
+                      text: 'Se ha registrado correctamente el usurio. ¡Vuelve al login!'
+                    });
+document.getElementById('cuaerpodelatabladeoperaciones').innerHTML = '';
+for(let elemento in response)
+{
+document.getElementById('cuaerpodelatabladeoperaciones').innerHTML +=
+'<tr><td>' + response[elemento].NOMBRE + '</td>' +
+'<td>' + response[elemento].APELLIDO + '</td>' +
+'<td>' + response[elemento].EMAIL + '</td>' +
+'<td>' + response[elemento].TIPOUSUARIO + '</td>' +
+'<td>' + response[elemento].PASSWORD + ' </td>' +
+'<td> <img src="' + response[elemento].FOTO + '" class="img1" /></td>' +
+'<td><input type="button" value="ELIMINAR" onclick="eliminarenbd(\''+response[elemento]._id+'\')" /></td>'
++'</tr>';
+}
+}, function(error){
+console.error("Failed", error);
+alert("Error " + error);
+});}
+
+function eliminarenbd(iddelaoperacion) //funcion del boton de eliminar
+{P_instanciada._id = iddelaoperacion;
+P_instanciada.Eliminar().then(function(response)
+{
+alert('Dato eliminado');
+document.getElementById('cuaerpodelatabladeoperaciones').innerHTML = '';
+for(let elemento in response)
+{
+document.getElementById('cuaerpodelatabladeoperaciones').innerHTML +=
+'<tr><td>' + response[elemento].NOMBRE + '</td>' +
+'<td>' + response[elemento].APELLIDO + '</td>' +
+'<td>' + response[elemento].EMAIL + '</td>' +
+'<td>' + response[elemento].TIPOUSUARIO + '</td>' +
+'<td>' + response[elemento].PASSWORD + ' </td>' +
+'<td> <img src="' + response[elemento].FOTO + '" class="img1" /></td>' +
+'<td><input type="button" value="ELIMINAR" onclick="eliminarenbd(\''+response[elemento]._id+'\')" /></td>'
++'</tr>';
+}
+},
+function(err)
+{
+alert(err);
+});}
+function cargarTabla() { //se llama a la funcion que carga la tabla
+  P_instanciada.Listar().then(function(response) {
+    for (let elemento in response) {
+      document.getElementById('cuaerpodelatabladeoperaciones').innerHTML +=
+      '<tr><td>' + response[elemento].NOMBRE + '</td>' +
+    '<td>' + response[elemento].APELLIDO + '</td>' +
+    '<td>' + response[elemento].EMAIL + '</td>' +
+    '<td>' + response[elemento].TIPOUSUARIO + '</td>' +
+    '<td>' + response[elemento].PASSWORD + '</td>' +
+    '<td> <img src="' + response[elemento].FOTO + '" class="img1"" /></td>' +
+    '<td><input type="button" value="ELIMINAR" onclick="eliminarenbd(\''+response[elemento]._id+'\')" /></td>'
++'</tr>';
+    }
+  }, function(error) {
+    console.error("Failed", error);
+    alert("Error " + error);
+  });
+}
+
+
+
+
+
+
+
+
+
+$(document).ready(function () {
+	//Enable Tooltips
+	var tooltipTriggerList = [].slice.call(
+		document.querySelectorAll('[data-bs-toggle="tooltip"]')
+	);
+	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+		return new bootstrap.Tooltip(tooltipTriggerEl);
+	});
+
+	//Advance Tabs
+	$(".next").click(function () {
+		const nextTabLinkEl = $(".nav-tabs .active")
+			.closest("li")
+			.next("li")
+			.find("a")[0];
+		const nextTab = new bootstrap.Tab(nextTabLinkEl);
+		nextTab.show();
+	});
+
+	$(".previous").click(function () {
+		const prevTabLinkEl = $(".nav-tabs .active")
+			.closest("li")
+			.prev("li")
+			.find("a")[0];
+		const prevTab = new bootstrap.Tab(prevTabLinkEl);
+		prevTab.show();
+	});
+});
+
+
+
+</script>
+</body>
+</html>
+    </body>
+     	<!-- <p>Selecciona el genero con el que te identificas</p>
+  <label id="img_category_label"class="field"for="img_category"data-value="">
+	
+	<span>Genero</span>
+	<div id="img_category"class="psuedo_select"name="img_category">
+		<span class="selected"></span>
+		<ul id="img_category_options"class="options">
+			<li class="option"data-value="Otro">No definido</li>
+			<li class="option"data-value="Masculino">Masculino</li>
+			<li class="option"data-value="Otro">Femenino</li>
+			<li class="option"data-value="Masculino">Otro</li>
+		</ul>
+	</div>
+</label> -->
+
+<!-- 
+<p>Indicanos de que manera te registras</p>
+<label id="img_category_label"class="field"for="img_category"data-value="">
+
+<span>¿Eres?</span>
+<div id="img_category"class="psuedo_select"name="img_category">
+  <span class="selected"></span>	
+  <ul id="img_category_options"class="options">
+    <li class="option"data-value="Otro">Estudiante</li>
+    <li class="option"data-value="Masculino">Entusiasta</li>
+    <li class="option"data-value="Otro">Usuario casual</li>
+  </ul>
+</div>
+</label>
+ -->

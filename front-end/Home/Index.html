@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="BootstrapCSS">
+    <link rel="stylesheet" href="MCSS">
+    <link rel="stylesheet" href="FCSS">
+    <link rel="stylesheet" href="CCSS">
+    <link rel="stylesheet" href="BotCSS">
+
+
+    <script src="BotJS"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="Jquery"></script>
+    <script src="BootstrapJS"></script>
+    <script src="publicaciones.js"></script>
+    <script src="persona.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  
+    <title>Home</title>
+</head>
+
+<body onload="cargarTabla()">
+  
+<div id="loadingOverlay">
+  <div class="text-center">
+    <div class="spinner-border text-danger" role="status" style="width: 5rem;
+    height: 5rem; margin-top: 200%">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+
+<div id="contenido" class="hidden">
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <span id="logo"> <img src="/logo" width="55px"
+      height="60px" alt=""> 
+ </span>
+   
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <div id="profile-card" class="profile-card">
+            <img class="perfilImagen" src="/Perfil" alt="Imagen de perfil" id="perfilImagen">
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('https://images.pexels.com/photos/6147363/pexels-photo-6147363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+        <div class="carousel-caption">
+          <h5>SkillBrigde</h5>
+          <p>Es una manera enriquecedora de aprender y construir relaciones significativas 
+             basadas en el intercambio y el apoyo mutuo.</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/5542877/pexels-photo-5542877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+        <div class="carousel-caption">
+          <h5>¿Sabes qué es aprendizaje mutuo o aprendizaje recíproco?</h5>
+          <p>Es un enfoque, donde ambos participantes se benefician al compartir sus habilidades y 
+             conocimientos, ya que mientras uno enseña, también está aprendiendo de la otra persona</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('https://media.istockphoto.com/id/1434116614/es/foto/trabajo-en-equipo-diversidad-y-gerente-de-ventas-planificando-ideas-de-marca-con-un-dise%C3%B1ador.jpg?s=612x612&w=0&k=20&c=5KKzqnXJ789GKNqy8qozLbmASKtqvX9fAmu3wsupD6c=')">
+        <div class="carousel-caption">
+          <h5>¿Sabías qué...?</h5>
+          <p>En SkillBrigde, al aprender una nueva habilidad de alguien más, se amplía el conocimiento 
+             y las capacidades individuales.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+
+<!-- Page Content -->
+<section class="py-5">
+  <div class="container">
+    <h1 class="text-center">¡Bienvenido a SkillBrigde!</h1>
+    <p class="text-center" class="lead">¡Publicaciones que te pueden interesar!</p>
+  </div>
+</section>
+</header>
+</div>
+
+  <nav class="main-menu">
+    <div>
+       <a class="logo" href="http://startific.com">
+       </a> 
+     </div> 
+   <div class="settings"></div>
+   <div class="scrollbar" id="style-1">
+         
+   <ul>
+     
+   <li>                                   
+    <a href="/index">
+    <i class="fa fa-home fa-lg"></i>
+    <span class="nav-text">Home</span>
+    </a>
+    </li>   
+       
+    <li>                                 
+     <a href="/Usuario">
+       <i class="fa fa-user fa-lg"></i>
+       <span class="nav-text">Perfil</span>
+       </a>
+       </li>    
+    
+        
+    <ul class="logout">
+     <li>
+                        <a href="/Blog">
+                              <i class="fa fa-lightbulb-o fa-lg"></i>
+                             <span class="nav-text">
+                                 BLOG 
+                             </span>
+                             
+                         </a>
+     </li>  
+     </ul>
+    
+     <li>                                 
+       <a href="chat">
+       <i class="fa fa-envelope-o fa-lg"></i>
+       <span class="nav-text">Chats</span>
+       </a>
+       </li>   
+         
+   
+       <li >
+        <a href="MainPublicaciones">
+        <i class="fa fa-search"></i>
+        <span class="nav-text">Explorar</span>
+        </a>
+        </li>
+      
+   </li>
+   <li class="darkerlishadow">
+   <a href="noticias">
+   <i class="fa fa-clock-o fa-lg"></i>
+   <span class="nav-text">Noticias</span>
+   </a>
+   </li>
+    
+            
+   <li class="darkerli">
+    <a href="guia">
+    <i class="fa fa-search"></i>
+    <span class="nav-text">Guia pagina</span>
+    </a>
+    </li>
+  
+   <li class="darkerli">
+   <a href="Historia">
+   <i class="fa fa-desktop fa-lg"></i>
+   <span class="nav-text">historia del proyecto</span>
+   </a>
+   </li>
+  
+     
+   <li class="darkerli">
+   <a href="intercambios">
+   <i class="fa fa-refresh"></i>
+    <span class="nav-text">Acerca de los intercabios</span>
+   </a>
+   </li>
+   <li class="darkerli">
+     <a href="help  ">
+     <i class="fa fa-question-circle fa-lg"></i>
+      <span class="nav-text">Help</span>
+     </a>
+     </li>  
+         </nav>
+
+  <div class="fondoCard">	
+         <div class="card-container" id="cuaerpodelatabladeoperaciones"></div>
+  </div>
+
+  <button id="boton2xd" classname="boton2" type="button" onclick="window.location.href='/MainPublicaciones'">
+    Explora más <ion-icon name="rocket"></ion-icon>
+  </button>
+
+
+<div class="formF">
+<form>
+  <h1 class="title2">Agregar publicación</h1>
+  <i class="fa-solid fa-bullhorn"></i>
+  <label>
+  <input placeholder="¿Que te interesa aprender?" id="INTERES">
+  </label>
+  <label>
+  <input placeholder="¿Que habilidad te gustaría enseñar?" id="SABE">
+  </label>
+  <label>
+  <input placeholder="Introduce tu numero de telefono" id="NUMERO">
+  </label>
+  <div class="file-select" id="src-file1" >
+  <input type="file" id="FOTO" name="src-file1" aria-label="Imagen" style="border-radius: 10px;">
+  </div>
+  <br>
+  <input class="boton" id="button" type="button" value="Publicar" onclick="Guardar()">
+</form>
+</div>
+
+<div id="toggle-chat-btn" class="chat-toggle-button">
+  <img src="/SkillBotLogo" alt="Open Chat">
+</div>
+
+
+<div class="content chat-container">  
+  <div class="close-chat-btn">X</div>
+<div class="content">
+<div id="chat-contents">
+</div>
+<div class="chat-box">
+  <input type="text" id="chat-message-value" autocomplete="off" placeholder="Type a message">
+  <button id="submit-chat">
+    <svg width="15" height="20" viewBox="0 0 30 21">
+      <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+    </svg>
+  </button>
+</div>
+</div>
+</div>
+
+          <footer class="footer-basic">
+              <div class="social">
+                  <a href="#"><i class="icon ion-social-instagram"></i></a>
+                  <a href="#"><i class="icon ion-social-facebook"></i></a>      
+                  <a href="#"><i class="icon ion-ios-telephone"></i></a>
+                  <a href="#"><i class="icon ion-ios-email"></i></a>
+              </div>
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href="/Servicios">Servicios</a></li>
+                  <li class="list-inline-item"><a href="/Acerca_de">Acerca de</a></li>
+                  <li class="list-inline-item"><a href="/Terminos">Terminos</a></li>
+                  <li class="list-inline-item"><a href="/Politicas">Politica de Privacidad</a></li>
+              </ul>
+              <p class="copyright">SkillBrigde © 2023</p>
+              <link rel="stylesheet" href="footer.css">
+          </footer>
+</div>
+
+<script type="text/javascript">
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Agregar la clase 'loading' al body para ocultar la barra de desplazamiento
+  document.body.classList.add("loading");
+
+  // Simulación de carga con retardo de 3 segundos
+  setTimeout(function () {
+    var overlay = document.getElementById("loadingOverlay");
+    var contenido = document.getElementById("contenido");
+    
+    overlay.style.display = "none";
+    contenido.classList.remove("hidden");
+    
+    // Eliminar la clase 'loading' para mostrar la barra de desplazamiento nuevamente
+    document.body.classList.remove("loading");
+  }, 1000);
+});
+
+    let imagenbase64 = "";
+    $("#FOTO").change(function() {
+        readURL(this);
+    });
+    function readURL(input){
+        if (input.files && input.files[0]){
+            let reader = new FileReader();
+
+            reader.onload = function(e){
+                imagenbase64=e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+
+        }
+    }
+
+    let nombreUsuario = "";
+
+    function obtenerDatosUsuario() {
+    const tics_instanciada = new personaP();
+    tics_instanciada.obtenerUsuario().then(function(response) {
+        nombreUsuario = response.NOMBRE;
+
+        // Actualizar la imagen de perfil
+        const perfilImagen = document.getElementById('perfilImagen');
+        perfilImagen.src = response.FOTO;
+
+        // Actualizar las burbujas de chat con la nueva imagen de perfil
+        const chatBubbles = document.querySelectorAll('.chat-bubble .image.user');
+        chatBubbles.forEach(bubble => {
+            bubble.style.content = `url(${response.FOTO})`;
+        });
+
+    }).catch(function(error) {
+        console.error('Error al obtener los datos del usuario:', error);
+    });
+}
+
+    
+  function Guardar() {
+  var FECHAACTUAL = new Date(); // Obtener la fecha y hora actual
+
+  var tics_instanciada = new publicacionesdb(
+    0,
+    nombreUsuario,
+    document.getElementById("INTERES").value,
+    document.getElementById("SABE").value,
+    document.getElementById("NUMERO").value,
+    imagenbase64,
+    FECHAACTUAL // Agregar la fecha actual a la publicación
+  );
+
+  tics_instanciada.Guardar()
+    .then(function (response) {
+      console.log("Success!", response);
+      swal({
+                      icon: 'success',
+                      text: 'Publicacion exitosa'
+                    });
+      cargarTabla();
+    })
+    .catch(function (error) {
+      console.error("Failed", error);
+      swal({
+                      icon: 'error',
+                      text: 'Error al publicar'
+                    });
+      
+    });
+  }
+
+  function cargarTabla() {
+  obtenerDatosUsuario();
+
+  var tics_instanciada = new publicacionesdb(); 
+  tics_instanciada.Listar()
+    .then(function (response) {
+      // Ordenar las publicaciones en orden inverso según la fecha de guardado
+      response.sort(function (a, b) {
+        return new Date(b.FECHAACTUAL) - new Date(a.FECHAACTUAL);
+      });
+
+      var cardContent = ""; // Variable para almacenar el contenido del card
+      var maxPublicaciones = 3; // Máximo número de publicaciones a mostrar
+      // Tomar solo las últimas 3 publicaciones o la cantidad de publicaciones existentes si es menor
+      var ultimasPublicaciones = response.slice(
+        0,
+        Math.min(maxPublicaciones, response.length)
+      );
+
+      // Iterar sobre las últimas publicaciones
+      for (var elemento of ultimasPublicaciones) {
+        cardContent +=
+    '<article class="card">' +
+    '<img class="card__background" src="' +
+    elemento.FOTO +
+    '" alt="" width="2000" height="2200"/>' +
+    '<div class="card__content | flow">' +
+    '<div class="card__content--container | flow">' +
+    '<h2 class="card__title">' +
+    elemento.NOMBRE +
+    '</h2>' +
+    '<p class="card__description">' +
+    "Interes: " +
+    elemento.INTERES +
+    "<br>" +
+    "Sabe: " +
+    elemento.SABE +
+    '</p>' +
+    '</div>' +
+    '<div class="button-container">' +
+    '<button class="card__button">' +
+    "+506 " +
+    elemento.NUMERO +
+    '</button>' +
+    '<button class="card__button" onclick="DireccionSoporte()"><i class="fa-solid fa-circle-info"></i></button>' +
+    '</div>' +
+    '</div>' +
+    '</article>';
+}
+
+      // Agregar el contenido del card al elemento contenedor
+      document.getElementById(
+        "cuaerpodelatabladeoperaciones"
+      ).innerHTML = cardContent;
+    })
+    .catch(function (error) {
+      console.error("Failed", error);
+      alert("Error " + error);
+    });
+}
+
+
+function DireccionSoporte() {
+  window.location.href = "/soporte";
+}
+          </script>
+</html>
+
+   
