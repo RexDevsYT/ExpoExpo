@@ -29,7 +29,7 @@ class personaP {
         return new Promise((resolve, reject) => {
             try {
                 const xhr = new XMLHttpRequest();
-                xhr.open("PUT", "http://localhost:8080/api/agregarPersona");
+                xhr.open("PUT", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/agregarPersona");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function() {
                     if (xhr.status === 200) {
@@ -64,7 +64,7 @@ class personaP {
         return new Promise((resolve, reject) => {
             try {
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://localhost:8080/api/Login");
+                xhr.open("POST", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/Login");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function() {
                     if (xhr.status === 200) {
@@ -85,7 +85,7 @@ class personaP {
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://localhost:8080/api/modificarPersona");
+                xhr.open("POST", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/modificarPersona");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -108,7 +108,7 @@ class personaP {
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("DELETE", "http://localhost:8080/api/eliminardelabaseP");
+                xhr.open("DELETE", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/eliminardelabaseP");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -131,7 +131,7 @@ class personaP {
         return new Promise((resolve, reject) => {
             try {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://localhost:8080/api/listarP");
+                xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/listarP");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -153,7 +153,7 @@ obtenerUsuario() {
   return new Promise(function(resolve, reject) {
     try {
       var xhr = new XMLHttpRequest();
-      xhr.open("GET", "http://localhost:8080/api/usuario");
+      xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/usuario");
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onload = function() {
         if (xhr.status === 200) {
@@ -169,6 +169,84 @@ obtenerUsuario() {
   });
 }
 
+obtenerUsuarioPublico(userId) {
+    return new Promise(function(resolve, reject) {
+        try {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/usuarioPublico/" + userId);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    resolve(JSON.parse(xhr.responseText));
+                } else {
+                    reject(xhr);
+                }
+            };
+            xhr.send();
+        } catch (err) {
+            reject(err.message);
+        }
+    });
+}
+
+Logout() {
+    return new Promise((resolve, reject) => {
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/Logout"); // Puedes cambiar GET a DELETE si prefieres
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            resolve("Logout successful");
+          } else {
+            reject(xhr);
+          }
+        };
+        xhr.send();
+      } catch (err) {
+        reject(err.message);
+      }
+    });
+  }
+  
+  enviarImagen(imagenBase64) {
+    return new Promise((resolve, reject) => {
+        try {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/actualizarImagenPerfil");
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    resolve("Imagen actualizada con éxito");
+                } else {
+                    reject(xhr);
+                }
+            };
+            xhr.send(JSON.stringify({ imagen: imagenBase64 }));
+        } catch (err) {
+            reject(err.message);
+        }
+    });
+}
+
+verificarCookieUsuario() {
+    return new Promise(function(resolve, reject) {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/verificarCookieUsuario");
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          resolve(JSON.parse(xhr.responseText));
+        } else {
+          reject(xhr);
+        }
+      };
+      xhr.onerror = function() {
+        reject(new Error("Error en la solicitud AJAX"));
+      };
+      xhr.send();
+    });
+  }
+  
+  
 }
 
 

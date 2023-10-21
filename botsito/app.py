@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import main  # Asegúrate de que 'main.py' esté en el mismo directorio    .\myenv\Scripts\activate  python app.py
+import main  # Asegúrate de que 'main.py' esté en el mismo directorio    
+ 
 
 app = Flask(__name__)
 CORS(app)
@@ -14,7 +15,11 @@ def api_get_response():
 if __name__ == '__main__':
     app.run(debug=True)
 
-
+# python -m venv myenv
+# .\myenv\Scripts\activate  
+# cd botsito
+# pip install Flask-CORS
+# python app.py
 
 
 

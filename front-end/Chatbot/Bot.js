@@ -1,6 +1,6 @@
 async function fetchResponseFromAPI(text) {
     try {
-        let response = await fetch('http://127.0.0.1:5000/get_response', {
+        let response = await fetch('https://m9hhnbk6-5000.use2.devtunnels.ms/get_response', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -80,11 +80,14 @@ async function fetchResponseFromAPI(text) {
     // Añadir el evento de clic al botón de chat desplegable
     document.getElementById("toggle-chat-btn").addEventListener("click", toggleChatVisibility);
 
+
     document.querySelector(".close-chat-btn").addEventListener("click", closeChat);
 
     function closeChat() {
         const chatContainer = document.querySelector(".chat-container");
         const toggleButton = document.getElementById("toggle-chat-btn");
+
+
         
         chatContainer.classList.remove("active");
         toggleButton.style.display = "block";
@@ -122,6 +125,7 @@ async function fetchResponseFromAPI(text) {
     function toggleChatVisibility() {
         const chatContainer = document.querySelector(".chat-container");
         const chatToggleBtn = document.querySelector(".chat-toggle-button");
+
     
         if (chatContainer.classList.contains("active")) {
             chatContainer.classList.remove("active");

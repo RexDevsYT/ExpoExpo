@@ -361,6 +361,17 @@ select:disabled {
     cursor: pointer;
 }
 
+
+
+@media (max-width: 768px) {
+    [type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled) {
+        cursor: pointer;
+        padding: 10px 20px; /* Añade algo de relleno alrededor del texto del botón */
+
+    }
+
+}
+
 ::-moz-focus-inner {
     padding: 0;
     border-style: none
@@ -11594,3 +11605,12 @@ textarea.form-control-lg {
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
+
+
+
+
+
+
+
+
+

@@ -136,3 +136,13 @@ exports.ListarPorID = function(req, res) {
       });
 }
   
+exports.ListarPorUsuario = function(req, res) {
+    const userId = req.params.userId; // obtener el ID desde la URL
+    Item.find({ userId: userId }, function(err, items) {
+        if(err) {
+            res.send(err);
+        } else {
+            res.json(items);
+        }
+    });
+}

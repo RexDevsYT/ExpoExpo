@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="LCSS">
     <link rel="stylesheet" href="MCSS1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon" type="image/png" href="/Logo2"> 
     <script src="persona.js"></script>
     <title>Login</title>
 
@@ -19,16 +20,15 @@
           font-family: Arial, sans-serif;
         }
 
-    
         .header-logo {
     justify-content: center;
-    max-width: 150px;
-    margin-left: 27.5%;
+    max-width: 250px;
+    margin-left: 14.4%;
         
         }
     
         .header-nav {
-          margin-top: 20px;
+          margin-top: 10px;
         }
     
         .header-nav ul {
@@ -60,6 +60,17 @@
           color: #f04141;
         }
     
+        @media (max-width: 768px) {
+
+          .header-logo {
+    justify-content: center;
+    max-width: 250px;
+    margin-left: 13.4%;
+        
+        }
+  }
+
+        
       </style>
     </head>
     
@@ -68,11 +79,16 @@
       </header>
 
       <div class="Login"> 
-        <img class="header-logo" src="/logo2" alt="">
+        <img class="header-logo" src="/Logo" alt="">
            <form action="">
          
 
             <h1 class="title">Login</h1>
+            
+            <button class="button">
+              <img src="https://img.icons8.com/color/48/undefined/google-logo.png" alt="google logo" class="img">
+              <p>Sign in with Google</p>
+          </button> 
             <label>
                 <i class="fa-solid fa-user"></i>
                 <input placeholder="Email" type="text" id="EMAIL">
@@ -148,3 +164,50 @@ function crearCuenta() {
     </script>
 </body>
 </html>
+
+
+<style>
+  
+.container {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+    padding: 1%;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow:  14px 14px 30px #cccccc,
+                -14px -14px 24px #ffffff;
+    margin-bottom: 10rem; /* Ajusta el margen inferior según tus necesidades */
+}
+.button{
+    display: flex;
+    align-items:center;
+    border: 1px gray solid;
+    border-radius: 24px;
+    background-color: white;
+    padding: .5rem 4rem;
+    margin: 1rem 0;
+}
+
+
+.button:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.button .img{
+    padding-right: 1rem;
+}
+
+.button p{
+    font-weight: bolder;
+}
+
+.img{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+</style>

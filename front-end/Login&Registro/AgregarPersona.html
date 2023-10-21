@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewpoEFrt" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="LCSS2">
     <link rel="stylesheet" href="BootstrapCSS2">
-    <script src="BootstrapJS"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+    <script src="BootstrapJS"></script>    
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="persona.js"></script>
-    <title></title>
+    <link rel="icon" type="image/png" href="/Logo2"> 
+    <title>Registro</title>
 </head>
 
 
-<div class="contenedor">
-  
-  <div class="half-left">
-    
-    <img class="Fondo" src="/logoxd">
-
-  </img>
-  </div>
   <div class="half-right">
+
+
+      
       <div class="container">
         <div class="wizard my-5">
           <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
@@ -52,40 +49,59 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" role="tabpanel" id="step1" aria-labelledby="step1-tab">
               <h3>Paso 1</h3>
-              <p>¡Introduce tu informacion personal!</p>
-              <input type="text" id="NOMBRE" placeholder="Nombre" />
-              <input type="text" id="APELLIDO" placeholder="Apellido" />
-              <input type="date" id="FECHAN" placeholder="Fecha de nacimiento" />
-             
-             
-              <div class="text-center">
-              <a id="Botton-Ir-Login" href="/Login"> <i class="fa-solid fa-left-long"></i> <i class="fa-solid fa-user"></i> </a>
+
+              <p>¡Introduce tu información personal!</p>
+              <div class="floating-label">      
+                <input class="floating-input" id="NOMBRE" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Nombre</label>
               </div>
-              <div class="d-flex justify-content-end">
-                <a class="btn btn-info next">Continuar <i class="fas fa-angle-right"></i></a>
+              <div class="floating-label">      
+                <input class="floating-input" id="APELLIDO" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Apellido</label>
+              </div>
+              <div class="floating-label">      
+                <input class="floating-input" type="text" onclick="(this.type='date')" id="FECHAN" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Fecha de nacimiento</label>
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <div class="text-center">
+                  <a id="Botton-Ir-Login2" href="/Login"> <i class="fa-solid fa-left-long"></i> <i class="fa-solid fa-user"></i> </a>
+                  </div>
+                  <a class="btn btn-info next">Continuar <i class="fas fa-angle-right"></i></a>
               </div>
             </div>
+
+
             <div class="tab-pane fade" role="tabpanel" id="step2" aria-labelledby="step2-tab">
               <h3>Paso 2</h3>
             
               <p>¡Selecciona la imagen de perfil!</p>
-            <div class="file-select" id="src-file1" >
-              <input type="file" id="FOTO" name="src-file1" aria-label="Foto de perfil" style="border-radius: 10px;">
-            </div>
-            <p>Selecciona el genero con el que te identificas</p>
-            <P><i class="fa-solid fa-user" id="xd"></i> Genero
-              <select id="GENERO">
+              <div class="Subirfoto">
+              <div class="small-11 medium-1 large-1 columns">
+                <div class="circle">
+                  <img class="profile-pic img-fluid" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+            
+                </div>
+                <div class="p-image">
+                  <i class="fa fa-camera upload-button"></i>
+                   <input class="file-upload" type="file" id="FOTO" accept="image/*"/>
+                </div>
+             </div></div>
+
+            <div class="floating-label">  
+              <select class="floating-select" id="GENERO" onclick="this.setAttribute('value', this.value);" value="">
+                <option value=""></option>
                 <option value="Otro">No definido</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
-                <option value="Femenino">Otro</option>
-            </select> </P> 
-            <p>Indicanos de que manera te registras</p>
-          </P><i class="fa-solid fa-user" id="xd"></i> ¿Eres?  <select id="TIPOUSUARIO">
-            <option value="Estudiante">Estudiante</option>
-            <option value="Entusiasta">Entusiasta</option>
-            <option value="UsuarioCasual">Usuario casual</option>
-          </select></P> 
+              </select>
+              <span class="highlight"></span>
+              <label>Género</label>
+            </div>
           
             <br>
               <div class="d-flex justify-content-between">
@@ -96,9 +112,21 @@
             <div class="tab-pane fade" role="tabpanel" id="step3" aria-labelledby="step3-tab">
               
               <h3>Paso 3</h3>
-              <p>¡Introduce el correo electronico y la contraseña para tu cuenta!</p>
-              <input type="text" id="EMAIL" placeholder="Email" />
-              <input  id="PASSWORD" type="Password" placeholder="Contraseña" />
+              <p>¡Introduce el correo electrónico y la contraseña para tu cuenta!</p>
+
+                <div class="floating-label">      
+                  <input class="floating-input" id="EMAIL" type="text" placeholder=" ">
+                  <span class="highlight"></span>
+                  <label>Email</label>
+                </div>
+
+              <div class="floating-label">      
+                <input class="floating-input" id="PASSWORD" type="password" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Contraseña</label>
+              </div>
+              <br><br><br>
+              
               <div class="d-flex justify-content-between">
                 <a class="btn btn-secondary previous"><i class="fas fa-angle-left"></i> Volver</a>
                 <a class="btn btn-info next">Continuar <i class="fas fa-angle-right"></i></a>
@@ -106,12 +134,22 @@
             </div>
             <div class="tab-pane fade" role="tabpanel" id="step4" aria-labelledby="step4-tab">
               <h3>¡Ya casi lo tienes!</h3>
-              <p>Presiona el boton para terminar de crear tu cuenta.</p>
+              <p>Presiona el botón para terminar de crear tu cuenta.</p>
+              <div class="floating-label">  
+                <select class="floating-select" id="TIPOUSUARIO" onclick="this.setAttribute('value', this.value);" value="">
+                  <option value=""></option>
+                  <option value="Estudiante">Estudiante</option>
+                  <option value="Entusiasta">Entusiasta</option>
+                  <option value="UsuarioCasual">Usuario casual</option>
+                </select>
+                <span class="highlight"></span>
+                <label>Indícanos de que manera te registras</label>
+              </div>
               <input class="boton" type="button" value="Terminar" onclick="BotonGuardar()" />
               <div class="d-flex justify-content-between">
                 <a class="btn btn-secondary previous"><i class="fas fa-angle-left"></i> Volver</a>
                 <div class="text-center">
-                  <a id="Botton-Ir-Login2" href="/Login"> <i class="fa-solid fa-left-long"></i> <i class="fa-solid fa-user"></i> </a>
+                  <a id="Botton-Ir-Login2" href="/Login"><i class="fa-solid fa-user"></i> <i class="fa-solid fa-right-long"></i></a>
                   </div>
               </div>
 
@@ -122,47 +160,6 @@
       </div>
     </div> 
 </div>
-
-
-
-
-<style>
-#xd{
-  color:#ce1d61;
-}
-#GENERO{
-  height: 35px;
-  width: 92px;
-  color: white;
-    background-color: #ce1d61;
-    border-color: #ce1d61;
-    border-radius: 5px;
-}
-#TIPOUSUARIO{
-  height: 35px;
-  width: 92px;
-  color: white;
-    background-color: #ce1d61;
-    border-color: #ce1d61;
-    border-radius: 5px;
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script type:"text-javascript">
 
@@ -348,6 +345,28 @@ function cargarTabla() { //se llama a la funcion que carga la tabla
 
 
 
+function validarCamposPasoActual(pasoActual) {
+    let camposPorPaso = {
+        "step1": ["NOMBRE", "APELLIDO", "FECHAN"],
+        "step2": ["FOTO", "GENERO"],
+        "step3": ["EMAIL", "PASSWORD"],
+        "step4": ["TIPOUSUARIO"]
+    };
+
+    let campos = camposPorPaso[pasoActual];
+
+    for (let i = 0; i < campos.length; i++) {
+        let campo = document.getElementById(campos[i]);
+        if (!campo.value.trim()) {
+            swal({
+                icon: 'error',
+                text: 'Por favor, llena todos los campos de este paso antes de continuar.'
+            });
+            return false;
+        }
+    }
+    return true;
+}
 
 
 
@@ -364,14 +383,19 @@ $(document).ready(function () {
 	});
 
 	//Advance Tabs
-	$(".next").click(function () {
-		const nextTabLinkEl = $(".nav-tabs .active")
-			.closest("li")
-			.next("li")
-			.find("a")[0];
-		const nextTab = new bootstrap.Tab(nextTabLinkEl);
-		nextTab.show();
-	});
+  $(".next").click(function () {
+    let pasoActual = $(".nav-tabs .active").attr("href").substring(1); // Obtiene el ID del paso actual, por ejemplo: "step1"
+    if (validarCamposPasoActual(pasoActual)) {
+        const nextTabLinkEl = $(".nav-tabs .active")
+            .closest("li")
+            .next("li")
+            .find("a")[0];
+        const nextTab = new bootstrap.Tab(nextTabLinkEl);
+        nextTab.show();
+    }
+});
+
+
 
 	$(".previous").click(function () {
 		const prevTabLinkEl = $(".nav-tabs .active")
@@ -385,37 +409,33 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+$(document).ready(function() {
+
+    
+var readURL = function(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.profile-pic').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+$(".file-upload").on('change', function(){
+    readURL(this);
+});
+
+$(".upload-button").on('click', function() {
+   $(".file-upload").click();
+});
+});
 </script>
-</body>
 </html>
-    </body>
-     	<!-- <p>Selecciona el genero con el que te identificas</p>
-  <label id="img_category_label"class="field"for="img_category"data-value="">
-	
-	<span>Genero</span>
-	<div id="img_category"class="psuedo_select"name="img_category">
-		<span class="selected"></span>
-		<ul id="img_category_options"class="options">
-			<li class="option"data-value="Otro">No definido</li>
-			<li class="option"data-value="Masculino">Masculino</li>
-			<li class="option"data-value="Otro">Femenino</li>
-			<li class="option"data-value="Masculino">Otro</li>
-		</ul>
-	</div>
-</label> -->
-
-<!-- 
-<p>Indicanos de que manera te registras</p>
-<label id="img_category_label"class="field"for="img_category"data-value="">
-
-<span>¿Eres?</span>
-<div id="img_category"class="psuedo_select"name="img_category">
-  <span class="selected"></span>	
-  <ul id="img_category_options"class="options">
-    <li class="option"data-value="Otro">Estudiante</li>
-    <li class="option"data-value="Masculino">Entusiasta</li>
-    <li class="option"data-value="Otro">Usuario casual</li>
-  </ul>
-</div>
-</label>
- -->

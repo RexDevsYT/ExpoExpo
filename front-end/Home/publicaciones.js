@@ -25,7 +25,7 @@ class publicacionesdb{
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("PUT", "http://localhost:8080/api/agregarP");
+                xhr.open("PUT", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/agregarP");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -48,7 +48,7 @@ class publicacionesdb{
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://localhost:8080/api/modificarP");
+                xhr.open("POST", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/modificarP");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -71,7 +71,7 @@ class publicacionesdb{
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("DELETE", "http://localhost:8080/api/eliminardelabase");
+                xhr.open("DELETE", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/eliminardelabase");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -94,7 +94,7 @@ class publicacionesdb{
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://localhost:8080/api/peliculaporid");
+                xhr.open("POST", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/peliculaporid");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -116,7 +116,7 @@ class publicacionesdb{
         return new Promise((resolve, reject) => {
             try {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://localhost:8080/api/listar");
+                xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/listar");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -139,7 +139,7 @@ class publicacionesdb{
         return new Promise((resolve, reject) => {
             try {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://localhost:8080/api/ListarPorID");
+                xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/ListarPorID");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -161,7 +161,7 @@ class publicacionesdb{
         return new Promise((resolve, reject) => {
             try {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://localhost:8080/api/ListarTodo");
+                xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/ListarTodo");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -179,6 +179,25 @@ class publicacionesdb{
         });
     }
     
+    
+    ListarPorUsuario(userId) {
+        return new Promise(function(resolve, reject) {
+            try {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/ListarPorUsuario/" + userId);
+                xhr.onload = function() {
+                    if(xhr.status === 200) {
+                        resolve(JSON.parse(xhr.responseText));
+                    } else {
+                        reject(xhr);
+                    }
+                };
+                xhr.send();
+            } catch(err) {
+                reject(err.message);
+            }
+        });
+    }
 }
 
 

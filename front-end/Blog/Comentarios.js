@@ -12,7 +12,7 @@ class  blogdb{
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("PUT", "http://localhost:8080/api/agregarC");
+                xhr.open("PUT", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/agregarC");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -35,7 +35,7 @@ class  blogdb{
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://localhost:8080/api/modificarC");
+                xhr.open("POST", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/modificarC");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -58,7 +58,7 @@ class  blogdb{
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("DELETE", "http://localhost:8080/api/eliminardelabaseC");
+                xhr.open("DELETE", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/eliminardelabaseC");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -81,7 +81,7 @@ class  blogdb{
         return new Promise(function(resolve, reject){
             try{
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://localhost:8080/api/peliculaporid");
+                xhr.open("POST", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/peliculaporid");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {
@@ -103,7 +103,7 @@ class  blogdb{
         return new Promise((resolve, reject) => {
             try {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://localhost:8080/api/listarC");
+                xhr.open("GET", "https://m9hhnbk6-8000.use2.devtunnels.ms/api/listarC");
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.onload = function(){
                     if(xhr.status === 200) {

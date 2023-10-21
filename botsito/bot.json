@@ -1,44 +1,130 @@
 [
-    {
-      "response_type": "greeting",
-      "user_input": ["hola", "saludos", "buenas", "oi"],
-      "bot_response": "¡Hola! ¿Cómo puedo ayudarte?",
-      "required_words": []
-    },
-    {
-      "response_type": "farewell",
-      "user_input": ["adiós", "hasta luego", "nos vemos", "chao"],
-      "bot_response": "¡Hasta pronto!",
-      "required_words": []
-    },
-    {
-      "response_type": "search_skill",
-      "user_input": ["buscar", "encontrar", "localizar", "hallar", "habilidades"],
-      "bot_response": "Para buscar habilidades, dirígete al apartado de 'Explorar'. Allí encontrarás distintas habilidades publicadas.",
-      "required_words": ["buscar", "habilidades"]
-    },
-    {
-      "response_type": "learn",
-      "user_input": ["aprender", "estudiar", "conocer más", "saber sobre"],
-      "bot_response": "Si deseas aprender algo nuevo, te recomiendo visitar el apartado de 'Explorar'. Allí podrás encontrar diversas habilidades y temas.",
-      "required_words": ["aprender"]
-    },
-    {
-      "response_type": "report",
-      "user_input": ["reportar", "denunciar", "problema", "issue"],
-      "bot_response": "Si encuentras algo inapropiado o incorrecto, puedes reportarlo usando el botón de 'Reportar' que aparece en las publicaciones.",
-      "required_words": ["reportar"]
-    },
-    {
-      "response_type": "about",
-      "user_input": ["sobre", "acerca", "información", "vos", "tú"],
-      "bot_response": "Puedes leer más sobre nosotros y cómo funciona esta página en el apartado 'Acerca de nosotros'.",
-      "required_words": ["sobre", "acerca"]
-    },
-    {
-      "response_type": "delete_post",
-      "user_input": ["borrar", "eliminar", "quitar", "publicación", "post"],
-      "bot_response": "Puedes borrar las publicaciones que hayas realizado desde el apartado de tu perfil.",
-      "required_words": ["borrar", "publicación"]
-    }
+  {
+    "response_type": "greeting",
+    "user_input": ["hola", "saludos", "buenas", "oi", "holi", "holis", "olis", "oli", "ola", 
+                   "buenos días", "buenas tardes", "buenas noches", "hi", "hello", "boenas", "ayuda"],
+    "bot_response": "¡Hola! soy SkillBot ¿Cómo puedo ayudarte?",
+    "required_words": []
+  },
+  {
+    "response_type": "farewell",
+    "user_input": ["adiós", "hasta luego", "nos vemos", "chao", "chaito", "hasta pronto", "bye",
+                   "hasta nunca", "adiosito"],
+    "bot_response": "¡Hasta pronto!, espero volver a ser de ayuda",
+    "required_words": []
+  },
+  {
+    "response_type": "thanks",
+    "user_input": ["gracias", "muchas gracias", "te agradezco"],
+    "bot_response": "¡De nada! estoy aquí para ayudar :)",
+    "required_words":["gracias", "muchas gracias", "te agradezco"]
+  },
+  {
+    "response_type": "search_skill",
+    "user_input": ["buscar", "encontrar", "encuentro", "busco", "localizar", "localizo", "hallar", "hallo", "explorar", "exploro"],
+    "bot_response": "Para buscar habilidades, dirígete al apartado de 'Explorar'. Allí encontrarás distintas habilidades publicadas.",
+    "required_words": ["buscar", "encontrar", "encuentro", "busco", "localizar", "localizo", "hallar", "hallo", "explorar", "exploro"]
+  },
+  {
+    "response_type": "learn",
+    "user_input": ["aprender", "aprendo", "estudiar", "estudio", "conocer más", "saber sobre", "información"],
+    "bot_response": "Si deseas aprender algo nuevo, te recomiendo visitar el apartado de 'Explorar'. Allí podrás encontrar diversas habilidades y temas.",
+    "required_words": ["aprender", "aprendo", "estudiar", "estudio", "conocer más", "saber sobre", "información"]
+  },
+  {
+    "response_type": "report",
+    "user_input": ["reportar", "reporto", "denunciar", "denuncio", "problema", "issue", "acusar", "acuso", "reporte"],
+    "bot_response": "Si encuentras algo inapropiado o incorrecto, puedes reportarlo usando el botón de 'Reportar' que aparece en las publicaciones.",
+    "required_words": ["reportar", "reporto", "denunciar", "denuncio", "problema", "issue", "acusar", "acuso", "reporte"]
+  },
+  {
+    "response_type": "about",
+    "user_input": ["son","sobre", "información", "vos", "tú", "ustedes", "son"],
+    "bot_response": "BridgeSkill es una plataforma donde puedes intercambiar habilidades. Aquí puedes compartir habilidades que puedes enseñar y buscar habilidades que te gustaría aprender.Puedes leer más sobre nosotros y cómo funciona esta página en el apartado 'Acerca de'.",
+    "required_words": ["es","son","sobre", "información", "vos", "tú", "ustedes", "son"]
+  },
+  {
+    "response_type": "delete_post",
+    "user_input": ["borrar", "eliminar", "quitar", "desaparecer", "elimino", "quito", "borro", "desaparezco"],
+    "bot_response": "Puedes borrar las publicaciones que hayas realizado desde el apartado de tu perfil, dale click al ícono '🗑️' en cada publicación que deseas eliminar.",
+    "required_words": ["borrar", "eliminar", "quitar", "desaparecer", "elimino", "quito", "borro", "desaparezco"]
+  },
+  {
+    "response_type": "post",
+    "user_input": ["publicar", "publico","publicación", "publicaciones", "post", "postear", "posteo"],
+    "bot_response": "Haz clic en 'Crear nueva publicación'que es representado por el símbolo '+'. Luego, sigue las instrucciones para compartir la habilidad que deseas enseñar o aprender.",
+    "required_words": ["publicar", "publico","publicación", "publicaciones", "post", "postear", "posteo"]
+  },
+  {
+    "response_type": "blog",
+    "user_input": ["blog", "comentar", "comento", "comentarios", "como me siento"],
+    "bot_response": "Ve al apartado de blog y encontrarás una sección de comentarios al final. Escribe tu comentario y haz clic en 'Publicar'.",
+    "required_words": ["blog", "comentar", "comento", "comentarios", "como me siento"]
+  },
+  {
+    "response_type": "limit",
+    "user_input": ["limite","limitado","limitada","limites"],
+    "bot_response": "No hay un límite establecido para las publicaciones. Sin embargo, te recomiendo compartir habilidades genuinas y de interés para mantener la calidad de la plataforma.",
+    "required_words": ["limite","limitado","limitada","limites"]
+  },
+  {
+    "response_type": "not_found",
+    "user_input": ["no encuentro", "no se encuentra", "no hay", "no está"],
+    "bot_response": "Si no encuentras una habilidad específica, te recomiendo hacer un comentario en el apartado de blog expresando tu interés en esa habilidad específica y en aprenderla. ¡Quizás alguien más en la comunidad pueda ayudarte!.",
+    "required_words": ["no encuentro", "no se encuentra", "no hay", "no está"]
+  },
+  {
+    "response_type": "news",
+    "user_input": ["noticias", "noticia", "novedada", "novedades"],
+    "bot_response": "Ve al apartado de 'Noticias, en esa sección se estarán publicando las diferentes novedades y noticias de BridgeSkill.'",
+    "required_words": ["noticias", "noticia", "novedada", "novedades"]
+  },
+  {
+    "response_type": "guide",
+    "user_input": ["guia", "guias", "guía", "guías"],
+    "bot_response": "En el apartado de 'Guía de la página' podrás encontrar esa información.",
+    "required_words": ["guia", "guias", "guía", "guías"]
+  },
+  {
+    "response_type": "history",
+    "user_input": ["historia", "historias", "pasado", "trasfondo"],
+    "bot_response": "En el apartado 'Historia del proyecto' encontrarás la historia de BridgeSkill.",
+    "required_words": ["historia", "historias", "pasado", "trasfondo"]
+  },
+  {
+    "response_type": "exchange",
+    "user_input": ["intercambios", "intercambio", "trueque", "trueques", "transacción", "transacciones"],
+    "bot_response": "En el apartado 'Sobre los intercambios' encontrarás todo lo que neceditas saber sobre los intercambios.",
+    "required_words": ["intercambios", "intercambio", "trueque", "trueques", "transacción", "transacciones"]
+  },
+  {
+    "response_type": "help",
+    "user_input": ["ayuda", "help"],
+    "bot_response": "En el apartado 'Ayuda' encontrarás mucha información relevante que necesitas saber o siempre puedes preguntarme lo que necesitas, ¡estoy para ayudar!.",
+    "required_words": ["ayuda", "help"]
+  },
+  {
+    "response_type": "log_out",
+    "user_input": ["cerrar sesión", "quitar mi cuentra", "logout", "log out"],
+    "bot_response": "En el apartado de tu perfil y tienes que darle click al botón 'cerrar sesión'.",
+    "required_words": ["cerrar sesión", "quitar mi cuentra", "logout", "log out"]
+  },
+  {
+    "response_type": "services",
+    "user_input": ["servicios", "servicio"],
+    "bot_response": "En el footer se encuentra el acceso al apartado de 'Servicios'.",
+    "required_words": ["servicios", "servicio"]
+  },
+  {
+    "response_type": "terms",
+    "user_input": ["términos", "termino", "condición", "condiciones"],
+    "bot_response": "En el footer se encuentra el acceso al apartado de 'Términos y condiciones'.",
+    "required_words": ["términos", "servicio", "condición", "condiciones"]
+  },
+  {
+    "response_type": "privacity",
+    "user_input": ["políticas de privacidad", "privacidad"],
+    "bot_response": "En el footer se encuentra el acceso al apartado de 'Políticas de privacidad'.",
+    "required_words": ["políticas de privacidad", "privacidad"]
+  }
 ]

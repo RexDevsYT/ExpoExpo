@@ -1,4 +1,4 @@
-let cookieParser = require('cookie-parser'); 
+cookieParser = require('cookie-parser'); 
 const mongoose = require('mongoose');
 var ControllerPublicaciones = require('./Controllers/ControllerPublicaciones.js')
 var ControllerPersona = require('./Controllers/ControllerPersona.js')
@@ -12,6 +12,7 @@ module.exports = function(app){
     app.post('/api/peliculaporid', ControllerPublicaciones.Seleccionarporid);
     app.get('/api/listar', ControllerPublicaciones.Listar);
     app.get('/api/ListarPorID', ControllerPublicaciones.ListarPorID);
+    app.get('/api/ListarPorUsuario/:userId', ControllerPublicaciones.ListarPorUsuario);
     app.get('/api/ListarTodo', ControllerPublicaciones.ListarTodo);
 
     app.put('/api/agregarC',ControllerComentarios.Guardar);
@@ -21,13 +22,15 @@ module.exports = function(app){
     app.get('/api/listarC', ControllerComentarios.Listar);
    
     app.post('/api/Login',ControllerPersona.Login);
+    app.get('/api/Logout',ControllerPersona.Logout);
     app.put('/api/agregarPersona',ControllerPersona.GuardarP);
     app.post('/api/modificarPersona',ControllerPersona.ModificarP);
+    app.post('/api/actualizarImagenPerfil',ControllerPersona.actualizarImagenPerfil);
     app.delete('/api/eliminardelabaseP', ControllerPersona.EliminarP);
     app.get('/api/usuario', ControllerPersona.obtenerUsuario);
+    app.get('/api/usuarioPublico/:id', ControllerPersona.obtenerUsuarioPublico);
+    app.get('/api/verificarCookieUsuario', ControllerPersona.verificarCookieUsuario);
     app.get('/api/listarP', ControllerPersona.ListarP);
-
-
 
 
 //Login y registro
@@ -61,10 +64,7 @@ app.get('/MCSS1', function(req,res)
     res.sendfile('front-end/CSS/menu1.css');
 });
 
-app.get('/FondoR', function(req,res)
-{
-    res.sendfile('imagenes/FondoRegistro.png');
-});
+
 
 
 //Soporte y contacto
@@ -111,11 +111,14 @@ app.get('/chat', function(req,res)
 app.get('/Usuario', function(req,res) {
     res.sendfile('front-end/Home/Usuario.html');
 });
-
 app.get('/CCSS2', function(req,res)
 {
     res.sendfile('front-end/CSS/cardU.css');
 });
+app.get('/UsuarioPublico/:id', function(req, res) {
+    res.sendfile('front-end/Home/UsuarioPublico.html');
+});
+
 
 
 
@@ -134,25 +137,42 @@ app.get('/Desarrollo', function(req,res)
 {
     res.sendfile('imagenes/Desarrollo.png');
 });
-app.get('/registro', function(req,res)
+
+app.get('/inform', function(req,res)
 {
-    res.sendfile('imagenes/LogoL.png');
+    res.sendfile('imagenes/textoS.jpg');
 });
-app.get('/logoxd', function(req,res)
+
+app.get('/informeres', function(req,res)
 {
-    res.sendfile('imagenes/harto.png');
+    res.sendfile('imagenes/textores.jpg');
+});
+
+
+app.get('/rompecabezas', function(req,res)
+{
+    res.sendfile('imagenes/Byronsefeliz.png');
+});
+app.get('/ImagenRegistro', function(req,res)
+{
+    res.sendfile('imagenes/ImagenRegistro.png');
 });
 app.get('/Perfil', function(req,res)
 {
     res.sendfile('imagenes/Perfil.png');
 });
-app.get('/logo', function(req,res)
+app.get('/Logo', function(req,res)
 {
-    res.sendfile('imagenes/pipipi.png');
+    res.sendfile('imagenes/Logo.png');
 });
-app.get('/logo2', function(req,res)
+app.get('/Carrusel1', function(req,res)
 {
-    res.sendfile('imagenes/LogoL.png');
+    res.sendfile('imagenes/paracarrusel.png');
+});
+
+app.get('/Logo2', function(req,res)
+{
+    res.sendfile('imagenes/Logo2.png');
 });
 app.get('/imagenP', function(req,res)
 {
@@ -168,9 +188,32 @@ app.get('/CCSS4', function(req,res)
     res.sendfile('front-end/CSS/cardBlog.css');
 });
 
+app.get('/indexEst', function(req,res)
+{
+    res.sendfile('front-end/CSS/indexEstilos.css');
+});
+
 app.get('/MCSS', function(req,res)
 {
     res.sendfile('front-end/CSS/menu.css');
+});
+
+app.get('/CarruselNormal1', function(req,res)
+{
+    res.sendfile('imagenes/carruseln1.jpg');
+});
+app.get('/CarruselNormal2', function(req,res)
+{
+    res.sendfile('imagenes/carruseln2.jpg');
+});
+
+app.get('/CarruselResponsive1', function(req,res)
+{
+    res.sendfile('imagenes/carruselr1.jpg');
+});
+app.get('/CarruselResponsive2', function(req,res)
+{
+    res.sendfile('imagenes/carruselr2.jpg');
 });
 
 
@@ -185,6 +228,11 @@ app.get('/Comentarios.js', function(req,res)
 app.get('/Blog', function(req,res)
 {
     res.sendfile('front-end/Blog/Blog.html');
+});
+
+app.get('/fondoBlog', function(req,res)
+{
+    res.sendfile('imagenes/FondoBlog.jpg');
 });
 
 

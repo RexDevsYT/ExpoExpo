@@ -165,7 +165,7 @@ address {
 }
 
 ol,ul {
-    padding-left: 2rem
+    padding-left: 479rem;
 }
 
 dl,ol,ul {
@@ -2895,6 +2895,7 @@ textarea.form-control-lg {
 }
 
 .btn {
+    position:relative;
     display: inline-block;
     font-weight: 400;
     line-height: 1.5;
@@ -11584,3 +11585,5 @@ textarea.form-control-lg {
     margin-bottom: 9rem !important;
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
+
+
